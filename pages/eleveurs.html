@@ -1,28 +1,63 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>CertiPet - Espace Éleveurs</title>
-  <link rel="stylesheet" href="../style.css">
+    <meta charset="UTF-8">
+    <title>CertiPet - Espace Éleveurs</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <header>
-    <h1>Espace Éleveurs</h1>
-    <nav>
-      <a href="../index.html">Accueil</a>
-      <a href="eleveurs.html">Éleveurs</a>
-      <a href="#">Acheteurs</a>
-      <a href="#">Connexion</a>
-    </nav>
-  </header>
+    <header>
+        <h1>CertiPet</h1>
+        <nav>
+            <a href="../index.html">Accueil</a>
+            <a href="eleveurs.html">Éleveurs</a>
+            <a href="#">Acheteurs</a>
+            <a href="#">Connexion</a>
+        </nav>
+    </header>
 
-  <main>
-    <h2>Bienvenue dans votre espace éleveur</h2>
-    <p>Vous pourrez ici déposer une annonce, vérifier un certificat LOOF/LOF, ou gérer vos ventes.</p>
-  </main>
+    <main class="container">
+        <h2>Espace Éleveur</h2>
+        <p>Déposez une annonce pour vendre un animal de race en toute sécurité.</p>
 
-  <footer>
-    <p>&copy; 2025 CertiPet. Tous droits réservés.</p>
-  </footer>
+        <form id="annonce-form">
+            <label for="animal">Espèce :</label>
+            <select id="animal" name="animal" required>
+                <option value="">--Sélectionnez--</option>
+                <option value="chat">Chat</option>
+                <option value="chien">Chien</option>
+            </select>
+
+            <label for="race">Race :</label>
+            <input type="text" id="race" name="race" required>
+
+            <label for="nom">Nom de l’animal :</label>
+            <input type="text" id="nom" name="nom">
+
+            <label for="age">Âge (mois) :</label>
+            <input type="number" id="age" name="age" min="1">
+
+            <label for="loof">Certificat LOOF / LOF :</label>
+            <input type="file" id="loof" name="loof" accept=".pdf,.jpg,.png">
+
+            <label for="prix">Prix (€) :</label>
+            <input type="number" id="prix" name="prix" min="0" required>
+
+            <label for="description">Description :</label>
+            <textarea id="description" name="description" rows="5"></textarea>
+
+            <button type="submit">Publier l'annonce</button>
+        </form>
+
+        <div id="confirmation" style="display:none; margin-top:20px;">
+            ✅ Votre annonce a été enregistrée (localement).
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CertiPet</p>
+    </footer>
+
+    <script src="../script.js"></script>
 </body>
 </html>
