@@ -20,7 +20,11 @@
         <h2>Espace Éleveur</h2>
         <p>Déposez une annonce pour vendre un animal de race en toute sécurité.</p>
 
-        <form id="annonce-form">
+        <form id="formulaire-eleveur" enctype="multipart/form-data">
+
+<label for="photo">Photo de l'animal :</label>
+<input type="file" id="photo" name="photo" accept="image/*">
+
             <label for="animal">Espèce :</label>
             <select id="animal" name="animal" required>
                 <option value="">--Sélectionnez--</option>
