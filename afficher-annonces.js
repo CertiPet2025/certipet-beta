@@ -31,7 +31,6 @@ function creerCarte(annonce) {
   image.src = annonce.fichierPhoto;
   image.alt = "Photo de l'animal";
 
-  const fichierPhoto = reader.result; // quand le FileReader lit l’image
 
   const certificat = document.createElement("a");
   certificat.href = annonce.fichierCertificat;
