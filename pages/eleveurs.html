@@ -6,15 +6,17 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <header>
-        <h1>CertiPet</h1>
-        <nav>
-            <a href="../index.html">Accueil</a>
-            <a href="eleveurs.html">Éleveurs</a>
-            <a href="#">Acheteurs</a>
-            <a href="#">Connexion</a>
-        </nav>
-    </header>
+   <header>
+  <h1>CertiPet</h1>
+  <nav>
+    <ul>
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="eleveurs.html">Éleveur</a></li>
+      <li><a href="eleveurs.html">Déposer une annonce</a></li>
+      <li><a href="annonces.html">Annonces</a></li>
+    </ul>
+  </nav>
+</header>
 
     <main class="container">
         <h2>Espace Éleveur</h2>
@@ -27,6 +29,15 @@
 
             <label for="animal">Espèce :</label>
             <select id="animal" name="animal" required>
+
+<label for="chatterie">Nom de la chatterie :</label>
+<input type="text" id="chatterie" name="chatterie" required />
+<br>
+
+
+<label for="siret">Numéro de SIRET :</label>
+<input type="text" id="siret" required />
+
                 <option value="">--Sélectionnez--</option>
                 <option value="chat">Chat</option>
                 <option value="chien">Chien</option>
