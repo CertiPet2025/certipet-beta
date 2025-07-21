@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   const conteneur = document.getElementById('liste-annonces');
   const annonces = JSON.parse(localStorage.getItem('annonces')) || [];
+const chatterieElement = document.createElement("p");
+chatterieElement.textContent = `Nom de la chatterie : ${annonce.chatterie}`;
+div.appendChild(chatterieElement);
+
 
   annonces.forEach(annonce => {
     const carte = document.createElement('div');

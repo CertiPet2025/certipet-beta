@@ -22,6 +22,19 @@ function creerCarte(annonce) {
   image.src = annonce.image;
   image.alt = "Photo du chat";
 
+const chatterie = document.getElementById("chatterie").value;
+
+const annonce = {
+  nom: nom,
+  race: race,
+  age: age,
+  description: description,
+  fichierPhoto: fichierPhoto,
+  fichierCertificat: fichierCertificat,
+  chatterie: chatterie,
+  siret: siret,
+};
+
   const certificat = document.createElement("a");
   certificat.href = annonce.certificat;
   certificat.textContent = "Voir le certificat";
