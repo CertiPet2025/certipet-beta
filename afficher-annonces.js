@@ -1,61 +1,24 @@
-// Récupération des données stockées dans le localStorage
-const annonces = JSON.parse(localStorage.getItem("annonces")) || [];
+document.addEventListener("DOMContentLoaded", () => {
+  const annonces = JSON.parse(localStorage.getItem("annonces")) || [];
+  const container = document.getElementById("annonces-container");
 
-// Fonction pour créer une carte d'annonce
-function creerCarte(annonce) {
-  const carte = document.createElement("div");
-  carte.className = "carte";
+  annonces.forEach((annonce) => {
+    const carte = document.createElement("div");
+    carte.className = "carte";
 
-  const nom = document.createElement("h3");
-  nom.textContent = annonce.nom;
+    carte.innerHTML = `
+      <h2>${annonce.nom}</h2>
+      <p><strong>Race :</strong> ${annonce.race}</p>
+      <p><strong>Âge :</strong> ${annonce.age} mois</p>
+      <p><strong>Prix :</strong> ${annonce.prix} €</p>
+      <p><strong>Description :</strong> ${annonce.description}</p>
+      <p><strong>Chatterie :</strong> ${annonce.chatterie || 'Non renseigné'}</p>
+      <p><strong>SIRET :</strong> ${annonce.siret || 'Non renseigné'}</p>
+      <img src="${annonce.fichierPhoto}" alt="Photo de l'animal" />
+      <br>
+      <a href="${annonce.fichierCertificat}" target="_blank">Voir certificat</a>
+    `;
 
-  const race = document.createElement("p");
-  race.textContent = `Race : ${annonce.race}`;
-
-  const age = document.createElement("p");
-  age.textContent = `Âge : ${annonce.age} mois`;
-
-  const prix = document.createElement("p");
-  prix.textContent = `Prix : ${annonce.prix} €`;
-
-  const description = document.createElement("p");
-  description.textContent = `Description : ${annonce.description}`;
-
-  const chatterie = document.createElement("p");
-  chatterie.textContent = `Chatterie : ${annonce.chatterie}`;
-
-  const siret = document.createElement("p");
-  siret.textContent = `SIRET : ${annonce.siret}`;
-
-  const image = document.createElement("img");
-  image.src = annonce.fichierPhoto;
-  image.alt = "Photo de l'animal";
-
-
-  const certificat = document.createElement("a");
-  certificat.href = annonce.fichierCertificat;
-  certificat.textContent = "Voir certificat";
-  certificat.target = "_blank";
-
-  // Ajout des éléments à la carte
-  carte.appendChild(nom);
-  carte.appendChild(race);
-  carte.appendChild(age);
-  carte.appendChild(prix);
-  carte.appendChild(description);
-  carte.appendChild(chatterie);
-  carte.appendChild(siret);
-  carte.appendChild(image);
-  carte.appendChild(certificat);
-
-  return carte;
-}
-
-// Affichage des annonces dans la page
-const liste = document.getElementById("liste-annonces");
-
-annonces.forEach(annonce => {
-  const carte = creerCarte(annonce);
-  liste.appendChild(carte);
+    container.appendChild(carte);
+  });
 });
-
