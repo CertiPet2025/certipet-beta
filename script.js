@@ -22,25 +22,35 @@ function creerCarte(annonce) {
   image.src = annonce.image;
   image.alt = "Photo du chat";
 
-const chatterie = document.getElementById("chatterie").value;
-
-const annonce = {
-  nom: nom,
-  race: race,
-  age: age,
-  description: description,
-  fichierPhoto: fichierPhoto,
-  fichierCertificat: fichierCertificat,
-  chatterie: chatterie,
-  siret: siret,
-};
-
   const certificat = document.createElement("a");
   certificat.href = annonce.certificat;
   certificat.textContent = "Voir le certificat";
   certificat.target = "_blank";
 
+const chatterie = document.getElementById("chatterie").value;
+const siret = document.getElementById("siret").value;
+
+const annonce = {
+  nom,
+  race,
+  age,
+  prix,
+  description,
+  fichierPhoto,
+  fichierCertificat,
+  // ici tu ajoutes :
+  chatterie,
+  siret
+};
+const chatterieElt = document.createElement("p");
+chatterieElt.textContent = `Chatterie : ${annonce.chatterie}`;
+
+const siretElt = document.createElement("p");
+siretElt.textContent = `SIRET : ${annonce.siret}`;
+
   carte.appendChild(nom);
+  carte.appendChild(chatterieElt);
+  carte.appendChild(siretElt);
   carte.appendChild(race);
   carte.appendChild(age);
   carte.appendChild(email);
@@ -49,6 +59,7 @@ const annonce = {
 
   return carte;
 }
+
 
 // Affichage des annonces
 const conteneur = document.getElementById("conteneur-annonces");

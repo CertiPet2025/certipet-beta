@@ -57,3 +57,4 @@ annonces.forEach(annonce => {
   const carte = creerCarte(annonce);
   liste.appendChild(carte);
 });
+

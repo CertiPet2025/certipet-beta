@@ -27,21 +27,19 @@
 <label for="photo">Photo de l'animal :</label>
 <input type="file" id="photo" name="photo" accept="image/*">
 
-            <label for="animal">Espèce :</label>
-            <select id="animal" name="animal" required>
-
 <label for="chatterie">Nom de la chatterie :</label>
-<input type="text" id="chatterie" name="chatterie" required />
-<br>
+<input type="text" id="chatterie" name="chatterie">
 
+<label for="siret">Numéro SIRET :</label>
+<input type="text" id="siret" name="siret">
 
-<label for="siret">Numéro de SIRET :</label>
-<input type="text" id="siret" required />
+<label for="animal">Espèce :</label>
+<select id="animal" name="animal" required>
 
-                <option value="">--Sélectionnez--</option>
-                <option value="chat">Chat</option>
-                <option value="chien">Chien</option>
-            </select>
+<option value="">--Sélectionnez--</option>
+<option value="chat">Chat</option>
+<option value="chien">Chien</option>
+</select>
 
             <label for="race">Race :</label>
             <input type="text" id="race" name="race" required>
